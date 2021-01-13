@@ -1,5 +1,4 @@
 from datetime import datetime
-import os
 
 # classe do Menu
 class Menu:
@@ -263,7 +262,4 @@ def getCorrectInput(input_value, input_type):
 
 
 def clearTerminal():
-    try:
-        os.system("clear")
-    except:
-        os.system("cls")
+    print("\033[2J\033[1;1H")
