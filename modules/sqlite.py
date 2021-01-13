@@ -12,7 +12,7 @@ class Banco:
         self.c_pos = self.conn.cursor()
         self.select_especial = {
 			"condominios": "SELECT * FROM condominios ORDER BY RazaoSocial DESC",
-			"funcionarios": "SELEC Nome, CPF, Funcao, Salario,idCondominio FROM funcionarios ORDER BY Name DESC",
+			"funcionarios": "SELECT Nome, CPF, Funcao, Salario,idCondominio FROM funcionarios ORDER BY Nome ASC",
 			"esfuncionarios": "SELECT funcionarios.Nome, esfuncionarios.EntradaSaida, esfuncionarios.Horario, esfuncionarios.Motivo FROM esfuncionarios INNER JOIN funcionarios ON funcionarios.id = esfuncionarios.id ORDER BY funcionarios.Nome DESC",
 			"proprietarios": "SELECT Nome, Acesso, CPFCNPJ FROM proprietarios ORDER BY Nome DESC",
 		    "propriedades": "SELECT propriedades.id, proprietarios.Nome, propriedades.idCondominio FROM propriedades INNER JOIN proprietarios ON proprietarios.id = propriedades.IdProprietario ORDER BY proprietarios.Nome",
