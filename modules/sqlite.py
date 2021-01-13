@@ -15,7 +15,7 @@ class Banco:
 			"funcionarios": "SELECT Nome, CPF, Funcao, Salario,idCondominio FROM funcionarios ORDER BY Nome ASC",
 			"esfuncionarios": "SELECT funcionarios.Nome, esfuncionarios.EntradaSaida, esfuncionarios.Horario, esfuncionarios.Motivo FROM esfuncionarios INNER JOIN funcionarios ON funcionarios.id = esfuncionarios.id ORDER BY funcionarios.Nome DESC",
 			"proprietarios": "SELECT Nome, Acesso, CPFCNPJ FROM proprietarios ORDER BY Nome DESC",
-		    "propriedades": "SELECT propriedades.id, proprietarios.Nome, propriedades.idCondominio FROM propriedades INNER JOIN proprietarios ON proprietarios.id = propriedades.IdProprietario ORDER BY proprietarios.Nome",
+		        "propriedades": "SELECT propriedades.id, proprietarios.Nome, propriedades.idCondominio FROM propriedades INNER JOIN proprietarios ON proprietarios.id = propriedades.IdProprietario ORDER BY proprietarios.Nome",
 			"visitantes": "SELECT Nome, CPF, Motivo, IdPropriedade FROM visitantes ORDER BY Nome DESC",
 			"espessoas": "SELECT CASE Funcao WHEN 'V' THEN visitantes.Nome ELSE proprietarios.Nome END Name, espessoas.Horario, espessoas.EntradaSaida, espessoas.Motivo FROM espessoas INNER JOIN visitantes ON visitantes.id = espessoas.idPessoa INNER JOIN proprietarios ON visitantes.id = proprietarios.id"
 		}
